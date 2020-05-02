@@ -3,11 +3,18 @@ import MaterialAppBar from '@material-ui/core/AppBar';
 import useScrollTrigger from '@material-ui/core/useScrollTrigger';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import IconButton from '@material-ui/core/IconButton';
+import MenuIcon from '@material-ui/icons/Menu';
 import Slide from '@material-ui/core/Slide';
 
 interface Props {
     window?: () => Window;
     children?: React.ReactElement;
+}
+
+interface DrawerProps {
+    isOpen: boolean;
+    setOpen: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const HideOnScroll = (props: Props) => {
@@ -21,16 +28,22 @@ const HideOnScroll = (props: Props) => {
   );
 }
 
-const AppBar = (props: Props) => {
+const AppBar = (props: Props & DrawerProps) => {
+    const {isOpen, setOpen, ...other} = props;
     return (
         <React.Fragment>
-            <HideOnScroll {...props}>
-                <MaterialAppBar>
+            <HideOnScroll {...other}>
+                <MaterialAppBar >
                     <Toolbar>
+                        <IconButton edge="start" color="inherit" aria-label="menu" onClick={() => setOpen(!isOpen)}>
+                            <MenuIcon />
+                        </IconButton>
                         <Typography variant="h6">Journeat</Typography>
+                        <div />
                     </Toolbar>
                 </MaterialAppBar>
             </HideOnScroll>
+            <Toolbar />
         </React.Fragment>
     )
 }

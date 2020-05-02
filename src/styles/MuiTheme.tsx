@@ -14,7 +14,10 @@ const MuiTheme = createMuiTheme({
     },
   },
   overrides: {
-    MuiAppBar: {
+    MuiToolbar: {
+      root: {
+        justifyContent: 'space-between'
+      }
     }
   }
 });
