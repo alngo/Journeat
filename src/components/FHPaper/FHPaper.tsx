@@ -9,6 +9,9 @@ interface Props extends React.ComponentProps<typeof Paper> {
 const useStyles = makeStyles((theme) => ({
   paper: {
     height: "100%",
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
   },
 }));
 
