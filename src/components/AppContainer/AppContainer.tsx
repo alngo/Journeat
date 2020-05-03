@@ -1,16 +1,28 @@
 import React from "react";
 import Container from "@material-ui/core/Container";
-import Paper from "@material-ui/core/Paper";
-import Grid from "@material-ui/core/Grid";
+import ChartCalorie from "components/ChartCalorie/ChartCalorie";
+import ChartWeight from "components/ChartWeight/ChartWeight";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles((theme) => ({
+  content: {
+    height: "100vh",
+    flexGrow: 1,
+    overflow: "auto",
+    display: "flex",
+  },
+}));
+
 const AppContainer = () => {
+  const classes = useStyles();
+
   return (
-    <Container maxWidth="xl">
-      <Grid container spacing={3}>
-        <Grid item xs={12}>
-          <Paper>xs=12</Paper>
-        </Grid>
-      </Grid>
-    </Container>
+    <main className={classes.content}>
+      <Container maxWidth="xl">
+        <ChartCalorie height="60%" />
+        <ChartWeight height="30%" />
+      </Container>
+    </main>
   );
 };
 
