@@ -7,10 +7,10 @@ const AppInterface = () => {
 
   return (
     <React.Fragment>
-      <AppBar isOpen={isOpen} setOpen={setOpen}/>
-      <AppDrawer isOpen={isOpen} setOpen={setOpen}/>
+      <AppBar isOpen={isOpen} setOpen={setOpen} />
+      <AppDrawer isOpen={isOpen} setOpen={setOpen} />
     </React.Fragment>
-  )
-}
+  );
+};
 
 export default AppInterface;
