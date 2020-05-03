@@ -1,5 +1,5 @@
 import React from "react";
-import MaterialAppBar from "@material-ui/core/AppBar";
+import MUIAppBar from "@material-ui/core/AppBar";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
@@ -36,7 +36,7 @@ const AppBar = (props: Props & DrawerProps) => {
   return (
     <React.Fragment>
       <HideOnScroll {...other}>
-        <MaterialAppBar>
+        <MUIAppBar>
           <Toolbar>
             <IconButton
               edge="start"
@@ -49,7 +49,7 @@ const AppBar = (props: Props & DrawerProps) => {
             <Typography variant="h6">Journeat</Typography>
             <div />
           </Toolbar>
-        </MaterialAppBar>
+        </MUIAppBar>
       </HideOnScroll>
       <Toolbar />
     </React.Fragment>

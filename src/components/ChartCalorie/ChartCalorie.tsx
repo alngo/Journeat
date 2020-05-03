@@ -1,18 +1,22 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import FHPaper from "components/FHPaper/FHPaper";
+import ChartCalorieForm from "components/ChatCalorieForm/ChartCalorieForm";
 
 interface Props {
   height: string;
 }
 
 const ChartCalorie = (props: Props) => {
+  const [isOpen, setOpen] = React.useState(false);
   const { height } = props;
+
   return (
     <Box my={2} height={height}>
-      <FHPaper>
+      <FHPaper onDoubleClick={() => setOpen(true)}>
         <div>Calorie</div>
       </FHPaper>
+      <ChartCalorieForm isOpen={isOpen} handleClose={() => setOpen(false)} />
     </Box>
   );
 };
