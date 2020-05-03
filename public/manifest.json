@@ -1,9 +1,10 @@
 {
-  "theme_color": "#2196f3",
-  "background_color": "#2196f3",
-  "display": "browser",
-  "Scope": "/",
-  "start_url": "/",
+  "short_name": "Journeat",
+  "name": "Journeat",
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#000000",
+  "background_color": "#ffffff",
   "icons": [
     {
       "src": "images/icons/icon-72x72.png",

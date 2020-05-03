@@ -9,7 +9,7 @@ interface Props {
 }
 
 const ChartWeightForm = (props: Props) => {
-  const fields = [{ id: "weight", label: "Poid", type: "number" }];
+  const fields = [{ id: "weight", label: "Poids", type: "number" }];
 
   return (
     <Modal {...props}>
