@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     alignItems: "center",
     justifyContent: "center",
   },
+  paper: {
+    padding: theme.spacing(2, 4, 3),
+  },
 }));
 
 const Modal = (props: Props) => {
@@ -34,9 +37,11 @@ const Modal = (props: Props) => {
       BackdropProps={{
         timeout: 250,
       }}
+      disableAutoFocus
+      disableEnforceFocus
     >
       <Fade in={isOpen}>
-        <Paper>{children}</Paper>
+        <Paper className={classes.paper}>{children}</Paper>
       </Fade>
     </MUIModal>
   );
