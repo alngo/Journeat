@@ -2,7 +2,7 @@ import React from "react";
 import Box from "@material-ui/core/Box";
 import FHPaper from "components/FHPaper/FHPaper";
 import ChartWeightForm from "components/ChartWeightForm/ChartWeightForm";
-import Chart from "components/Chart/Chart";
+import LineChart from "components/LineChart/LineChart";
 
 interface Props {
   height: string;
@@ -15,7 +15,7 @@ const ChartWeight = (props: Props) => {
   return (
     <Box my={2} height={height}>
       <FHPaper onDoubleClick={() => setOpen(true)}>
-        <Chart />
+        <LineChart />
       </FHPaper>
       <ChartWeightForm isOpen={isOpen} handleClose={() => setOpen(false)} />
     </Box>
