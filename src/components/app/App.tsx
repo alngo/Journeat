@@ -16,6 +16,7 @@ const App = () => {
     const initializeDB = async (state: T_State) => {
       const res = await state.db.initialize();
       console.log(res);
+      state.db.resetDB();
     };
     initializeDB(state);
   });
