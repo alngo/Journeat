@@ -12,8 +12,9 @@ const FormProfile = (props: Props) => {
   const fields = [
     { id: "Firstname", label: "Firstname", type: "text" },
     { id: "Lastname", label: "Lastname", type: "text" },
-    { id: "weight", label: "Age", type: "number" },
-    { id: "weight", label: "Poids", type: "number" },
+    { id: "Gender", label: "Gender", type: "text" },
+    { id: "age", label: "Age", type: "number" },
+    { id: "weight", label: "Weight", type: "number" },
   ];
 
   return (
