@@ -1,8 +1,8 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { InputProps } from "types/InputProps";
-import NumberField from "components/NumberField/NumberField";
-import TextField from "components/TextField/TextField";
+import NumberField from "components/FieldNumber/FieldNumber";
+import TextField from "components/FieldText/FieldText";
 import Typography from "@material-ui/core/Typography";
 
 interface Props {
