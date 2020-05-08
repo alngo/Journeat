@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "center",
   },
   paper: {
+    width: "95%",
     padding: theme.spacing(2, 4, 3),
   },
 }));

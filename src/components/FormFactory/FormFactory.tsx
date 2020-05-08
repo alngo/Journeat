@@ -3,14 +3,16 @@ import Grid from "@material-ui/core/Grid";
 import { InputProps } from "types/InputProps";
 import NumberField from "components/NumberField/NumberField";
 import TextField from "components/TextField/TextField";
+import Typography from "@material-ui/core/Typography";
 
 interface Props {
+  legend?: String;
   fields: Array<InputProps>;
   submit?: React.ReactElement;
 }
 
 const FormFactory = (props: Props) => {
-  const { fields, submit } = props;
+  const { legend, fields, submit } = props;
 
   const generateInput = (props: InputProps) => {
     switch (props.type) {
@@ -34,6 +36,11 @@ const FormFactory = (props: Props) => {
 
   return (
     <form>
+      {legend && (
+        <Typography variant="h5" component="legend">
+          {legend}
+        </Typography>
+      )}
       <Grid container spacing={2}>
         {generateForm(fields)}
         {submit}

@@ -1,7 +1,7 @@
 import React from "react";
 import Box from "@material-ui/core/Box";
 import FHPaper from "components/FHPaper/FHPaper";
-import ChartWeightForm from "components/ChartWeightForm/ChartWeightForm";
+import FormWeight from "components/FormWeight/FormWeight";
 import Chart from "components/Chart/Chart";
 
 interface Props {
@@ -17,7 +17,7 @@ const ChartWeight = (props: Props) => {
       <FHPaper onDoubleClick={() => setOpen(true)}>
         <Chart />
       </FHPaper>
-      <ChartWeightForm isOpen={isOpen} handleClose={() => setOpen(false)} />
+      <FormWeight isOpen={isOpen} handleClose={() => setOpen(false)} />
     </Box>
   );
 };

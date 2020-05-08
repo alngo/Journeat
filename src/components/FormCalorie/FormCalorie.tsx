@@ -8,7 +8,7 @@ interface Props {
   handleClose: () => void;
 }
 
-const ChartCalorieForm = (props: Props) => {
+const FormCalorie = (props: Props) => {
   const fields = [
     { id: "food", label: "Aliment", type: "text" },
     { id: "quantity", label: "Quantité", type: "number" },
@@ -17,6 +17,7 @@ const ChartCalorieForm = (props: Props) => {
   return (
     <Modal {...props}>
       <FormFactory
+        legend="Calorie"
         fields={fields}
         submit={
           <Button fullWidth variant="contained" color="primary">
@@ -28,4 +29,4 @@ const ChartCalorieForm = (props: Props) => {
   );
 };
 
-export default ChartCalorieForm;
+export default FormCalorie;

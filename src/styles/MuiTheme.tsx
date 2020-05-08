@@ -19,6 +19,11 @@ const MuiTheme = createMuiTheme({
         justifyContent: "space-between",
       },
     },
+    MuiTypography: {
+      root: {
+        padding: 0,
+      },
+    },
   },
 });
 
