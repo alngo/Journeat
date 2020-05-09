@@ -23,7 +23,7 @@ class Database {
         };
         req.onerror = (e: any) => {
           console.error("IndexedDB is not available");
-          reject({ success: false, db: null });
+          reject({ success: false, db: e.target.result });
         };
       }
     });

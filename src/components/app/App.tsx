@@ -11,8 +11,7 @@ const App = () => {
 
   React.useEffect(() => {
     const initializeDB = async (state: T_State) => {
-      const res = await state.db.initialize();
-      console.log(res);
+      await state.db.initialize();
       state.db.resetDB();
     };
     initializeDB(state);

@@ -46,24 +46,14 @@ class Record<T> {
   };
 
   update = (obj: T_KeyStringObj) => {
-    return new Promise((resolve, reject) => {
-      let transaction: IDBTransaction;
-      let objStore: IDBObjectStore;
-      let req: IDBRequest;
-      let index: IDBIndex;
+    let transaction: IDBTransaction;
+    let objStore: IDBObjectStore;
+    let req: IDBRequest;
 
-      transaction = this.db.transaction([this.schema.name], "readwrite");
-      objStore = transaction.objectStore(this.schema.name);
-      index = objStore.index(this.schema.indexName);
-      req = index.get(obj[this.schema.keyPath]);
-      req.onsuccess = function (e: any) {
-        objStore.put(obj);
-        resolve({ success: true, obj: e.target.result });
-      };
-      req.onerror = function (e: any) {
-        reject({ success: false, obj: e.target.result });
-      };
-    });
+    transaction = this.db.transaction([this.schema.name], "readwrite");
+    objStore = transaction.objectStore(this.schema.name);
+    req = objStore.put(obj);
+    return this.reqPromise(req);
   };
 
   delete(id: string) {
