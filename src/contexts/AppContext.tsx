@@ -1,24 +1,13 @@
 import React from "react";
 import Database, { Schemas } from "database/indexedDB";
 import theme from "styles/MuiTheme";
-
-export type T_State = {
-  db: Database;
-  theme: any;
-  language: "fr_FR" | "en_US";
-  translation: any;
-};
-
-export type T_Action =
-  | { type: "ADD" }
-  | { type: "CREATE"; create: object }
-  | { type: "DELETE"; id: string };
+import Translations from "translations/";
+import { T_State, T_Action } from "types/";
 
 const initialState: T_State = {
   db: new Database("database", Schemas),
+  trans: new Translations("fr_FR"),
   theme: theme,
-  language: "fr_FR",
-  translation: "qwe",
 };
 
 const AppContext = React.createContext<{

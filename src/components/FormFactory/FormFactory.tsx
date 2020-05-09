@@ -1,20 +1,20 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import { InputProps } from "types/InputProps";
+import { I_Input } from "types";
 import NumberField from "components/FieldNumber/FieldNumber";
 import TextField from "components/FieldText/FieldText";
 import Typography from "@material-ui/core/Typography";
 
 interface Props {
   legend?: String;
-  fields: Array<InputProps>;
+  fields: Array<I_Input>;
   submit?: React.ReactElement;
 }
 
 const FormFactory = (props: Props) => {
   const { legend, fields, submit } = props;
 
-  const generateInput = (props: InputProps) => {
+  const generateInput = (props: I_Input) => {
     switch (props.type) {
       case "number":
         return <NumberField {...props} />;
@@ -23,7 +23,7 @@ const FormFactory = (props: Props) => {
     }
   };
 
-  const generateForm = (fields: Array<InputProps>) => {
+  const generateForm = (fields: Array<I_Input>) => {
     const inputs = fields.map((props) => {
       return (
         <Grid key={props.id} item xs={12}>

@@ -3,11 +3,8 @@ import AppInterface from "components/AppInterface/AppInterface";
 import AppContainer from "components/AppContainer/AppContainer";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "styles/MuiTheme";
-import AppContext, {
-  reducer,
-  initialState,
-  T_State,
-} from "contexts/AppContext";
+import AppContext, { reducer, initialState } from "contexts/AppContext";
+import { T_State } from "types/";
 
 const App = () => {
   const [state, dispatch] = React.useReducer(reducer, initialState);
