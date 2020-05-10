@@ -1,12 +1,16 @@
 import React from "react";
-import Database, { Schemas } from "database/indexedDB";
+import Database from "database/Database";
+import Profile from "database/classes/Profile";
 import theme from "styles/MuiTheme";
 import Translations from "translations/";
 import { T_State, T_Action } from "types/";
 
+const db = new Database();
+
 const initialState: T_State = {
-  db: new Database("database", Schemas),
-  trans: new Translations("fr_FR"),
+  db: db,
+  profile: new Profile(db),
+  translation: new Translations("fr_FR"),
   theme: theme,
 };
 
@@ -20,6 +24,10 @@ const AppContext = React.createContext<{
 
 const reducer = (state: T_State, action: T_Action) => {
   switch (action.type) {
+    case "setLoading":
+      return { ...state, loading: action.payload };
+    case "setError":
+      return { ...state, error: action.payload };
     default:
       return state;
   }

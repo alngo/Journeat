@@ -6,10 +6,12 @@ const fr_FR = {
   age: "age",
   weight: "poids",
   height: "taille",
+  submit: "valider",
+  intake: "apport",
 };
 
 class Translations {
-  private translations: T_KeyStringObj;
+  private translations: T_KeyStringObj<T_KeyStringObj<String>>;
   language: T_Language;
 
   constructor(language: T_Language) {
@@ -17,6 +19,10 @@ class Translations {
       fr_FR: fr_FR,
     };
     this.language = language;
+  }
+
+  get words() {
+    return this.translations[this.language];
   }
 }
 
