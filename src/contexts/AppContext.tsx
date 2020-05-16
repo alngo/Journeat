@@ -8,7 +8,6 @@ import { T_State, T_Action } from "types/";
 const db = new Database();
 
 const initialState: T_State = {
-  db: db,
   profile: new Profile(db),
   translation: new Translations("fr_FR"),
   theme: theme,

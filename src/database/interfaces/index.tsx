@@ -6,14 +6,6 @@ export interface IProfile {
   height: number;
 }
 
-export interface ISetting {
-  id?: number;
-  profileId: number;
-  treshold: number;
-  language: string;
-  theme: string;
-}
-
 export interface IWeight {
   id?: number;
   profileId: number;

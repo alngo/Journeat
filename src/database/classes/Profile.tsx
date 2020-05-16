@@ -1,4 +1,4 @@
-import { IProfile, ISetting, IWeight, IIntake } from "database/interfaces";
+import { IProfile } from "database/interfaces";
 import Database from "database/Database";
 
 class Profile implements IProfile {
@@ -8,30 +8,21 @@ class Profile implements IProfile {
   lastname!: string;
   age!: number;
   height!: number;
-  setting?: ISetting;
-  weights?: Array<IWeight>;
-  intakes?: Array<IIntake>;
 
   constructor(db: Database, id?: number) {
     this.db = db;
-    this.id = id;
+    this.id = id || 0;
   }
 
-  initialize = async () => {
-    if (this.id) {
-      this.setting = await this.db.settings
-        .where("profileId")
-        .equals(this.id)
-        .first();
-      this.weights = await this.db.weights
-        .where("profileId")
-        .equals(this.id)
-        .toArray((weights: Array<IWeight>) => (this.weights = weights));
-      this.intakes = await this.db.intakes
-        .where("profileId")
-        .equals(this.id)
-        .toArray((intakes: Array<IIntake>) => (this.intakes = intakes));
+  initialize_profile = async () => {
+    const profile = await this.db.profiles.get(0);
+    if (profile) {
+      this.firstname = profile.firstname;
+      this.lastname = profile.lastname;
+      this.age = profile.age;
+      this.height = profile.height;
     }
+    return profile;
   };
 }
 
