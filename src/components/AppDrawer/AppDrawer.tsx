@@ -7,6 +7,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AccountCircleIcon from "@material-ui/icons/AccountCircle";
 import SettingsIcon from "@material-ui/icons/Settings";
+import FormProfile from "components/FormProfile/FormProfile";
+import FormSetting from "components/FormSetting/FormSetting";
 
 interface Props {
   isOpen: boolean;
@@ -15,6 +17,8 @@ interface Props {
 
 const AppDrawer = (props: Props) => {
   const { isOpen, setOpen } = props;
+  const [profile, setProfile] = React.useState(false);
+  const [setting, setSetting] = React.useState(false);
 
   return (
     <SwipeableDrawer
@@ -24,22 +28,27 @@ const AppDrawer = (props: Props) => {
       onOpen={() => setOpen(true)}
     >
       <List>
-        <ListItem button>
+        <ListItem alignItems="center">
+          <ListItemText primary={"Menu"} />
+        </ListItem>
+      </List>
+      <Divider />
+      <List>
+        <ListItem button onClick={() => setProfile(true)}>
           <ListItemIcon>
             <AccountCircleIcon />
           </ListItemIcon>
           <ListItemText primary={"Profil"} />
         </ListItem>
-      </List>
-      <Divider />
-      <List>
-        <ListItem button>
+        <ListItem button onClick={() => setSetting(true)}>
           <ListItemIcon>
             <SettingsIcon />
           </ListItemIcon>
           <ListItemText primary={"Configuration"} />
         </ListItem>
       </List>
+      <FormProfile isOpen={profile} handleClose={() => setProfile(false)} />
+      <FormSetting isOpen={setting} handleClose={() => setSetting(false)} />
     </SwipeableDrawer>
   );
 };

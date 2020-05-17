@@ -3,9 +3,9 @@ import FormControl from "@material-ui/core/FormControl";
 import Input from "@material-ui/core/Input";
 import InputLabel from "@material-ui/core/InputLabel";
 import FormHelperText from "@material-ui/core/FormHelperText";
-import { InputProps } from "types/InputProps";
+import { I_Input } from "types";
 
-const NumberField = (props: InputProps) => {
+const NumberField = (props: I_Input) => {
   const { helper, label, ...other } = props;
   return (
     <FormControl fullWidth>

@@ -8,12 +8,13 @@ interface Props {
   handleClose: () => void;
 }
 
-const ChartWeightForm = (props: Props) => {
+const FormWeight = (props: Props) => {
   const fields = [{ id: "weight", label: "Poids", type: "number" }];
 
   return (
     <Modal {...props}>
       <FormFactory
+        legend="Weight"
         fields={fields}
         submit={
           <Button fullWidth variant="contained" color="primary">
@@ -25,4 +26,4 @@ const ChartWeightForm = (props: Props) => {
   );
 };
 
-export default ChartWeightForm;
+export default FormWeight;
