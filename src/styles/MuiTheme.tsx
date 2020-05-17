@@ -1,22 +1,30 @@
-import { createMuiTheme } from '@material-ui/core/styles';
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const MuiTheme = createMuiTheme({
   palette: {
     primary: {
-      main: '#aed581',
-      light: '#e1ffb1',
-      dark: '#7da453'
-    } ,
+      main: "#aed581",
+      light: "#e1ffb1",
+      dark: "#7da453",
+    },
     secondary: {
-      main: '#ffb74d',
-      light: '#ffe97d',
-      dark: '#ca9b52'
+      main: "#ffb74d",
+      light: "#ffe97d",
+      dark: "#ca9b52",
     },
   },
   overrides: {
-    MuiAppBar: {
-    }
-  }
+    MuiToolbar: {
+      root: {
+        justifyContent: "space-between",
+      },
+    },
+    MuiTypography: {
+      root: {
+        padding: 0,
+      },
+    },
+  },
 });
 
 export default MuiTheme;
