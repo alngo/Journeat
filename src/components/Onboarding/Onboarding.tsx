@@ -1,9 +1,15 @@
 import React from "react";
 import Modal from "components/Modal/Modal";
 
-const Onboarding = () => {
+type Props = {
+  isOpen: boolean;
+  handleClose: () => void;
+};
+
+const Onboarding = (props: Props) => {
+  const { isOpen } = props;
   return (
-    <Modal isOpen={true} handleClose={() => console.log("coucou")}>
+    <Modal isOpen={isOpen} handleClose={() => {}}>
       <div>coucou</div>
     </Modal>
   );
