@@ -16,28 +16,28 @@ const FormProfile = (props: Props) => {
 
   const fields = [
     {
+      defaultValue: profile.firstname,
       id: "Firstname",
       label: "Firstname",
       type: "text",
-      defaultValue: profile.firstname,
     },
     {
+      defaultValue: profile.lastname,
       id: "Lastname",
       label: "Lastname",
       type: "text",
-      defaultValue: profile.lastname,
     },
     {
+      defaultValue: profile.gender,
       id: "Gender",
       label: "Gender",
       type: "text",
-      defaultValue: profile.gender,
     },
     {
+      defaultValue: profile.age,
       id: "age",
       label: "Age",
       type: "number",
-      defaultValue: profile.age,
     },
   ];
 
