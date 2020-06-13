@@ -1,4 +1,5 @@
 import React from "react";
+import AppContext from "contexts/AppContext";
 import Modal from "components/Modal/Modal";
 import FormFactory from "components/FormFactory/FormFactory";
 import Button from "@material-ui/core/Button";
@@ -9,12 +10,35 @@ interface Props {
 }
 
 const FormProfile = (props: Props) => {
+  const {
+    state: { profile },
+  } = React.useContext(AppContext);
+
   const fields = [
-    { id: "Firstname", label: "Firstname", type: "text" },
-    { id: "Lastname", label: "Lastname", type: "text" },
-    { id: "Gender", label: "Gender", type: "text" },
-    { id: "age", label: "Age", type: "number" },
-    { id: "weight", label: "Weight", type: "number" },
+    {
+      id: "Firstname",
+      label: "Firstname",
+      type: "text",
+      defaultValue: profile.firstname,
+    },
+    {
+      id: "Lastname",
+      label: "Lastname",
+      type: "text",
+      defaultValue: profile.lastname,
+    },
+    {
+      id: "Gender",
+      label: "Gender",
+      type: "text",
+      defaultValue: profile.gender,
+    },
+    {
+      id: "age",
+      label: "Age",
+      type: "number",
+      defaultValue: profile.age,
+    },
   ];
 
   return (
