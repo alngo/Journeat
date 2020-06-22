@@ -10,7 +10,7 @@ class Database extends Dexie {
   constructor() {
     super("JourneatDB");
     this.version(1).stores({
-      profiles: "++id, firstname, lastname, age, height, weight",
+      profiles: "++id, firstname, lastname, gander, age, height",
       foods: "++id, name, measure, intake",
       weights: "++id, profileId, timestamp, value",
       intakes: "++id, profileId, foodId, timestamp, amount",

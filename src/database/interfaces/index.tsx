@@ -2,6 +2,7 @@ export interface IProfile {
   id?: number;
   firstname: string;
   lastname: string;
+  gender: string;
   age: number;
   height: number;
 }

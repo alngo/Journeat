@@ -21,7 +21,12 @@ const App = () => {
   return (
     <AppContext.Provider value={{ state, dispatch }}>
       <ThemeProvider theme={theme}>
-        {onboarding && <Onboarding />}
+        {onboarding && (
+          <Onboarding
+            isOpen={onboarding}
+            handleClose={() => setOnboarding(false)}
+          />
+        )}
         <AppInterface />
         <AppContainer />
       </ThemeProvider>
