@@ -38,12 +38,32 @@ class Profile implements IProfile {
     return id;
   };
 
+  update = async () => {
+    await this.db.profiles.update(this.id, {
+      firstname: this.firstname,
+      lastname: this.lastname,
+      gender: this.gender,
+      age: this.age,
+    });
+  };
+
   addWeight = async (weight: number) => {
     if (this.id) {
       await this.db.weights.add({
         profileId: this.id,
         timestamp: Date.now(),
         value: weight,
+      });
+    }
+  };
+
+  addIntake = async (foodId: number, amount: number) => {
+    if (this.id) {
+      await this.db.intakes.add({
+        profileId: this.id,
+        foodId: foodId,
+        timestamp: Date.now(),
+        amount: amount,
       });
     }
   };

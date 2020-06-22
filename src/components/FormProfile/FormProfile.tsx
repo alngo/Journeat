@@ -20,24 +20,36 @@ const FormProfile = (props: Props) => {
       id: "Firstname",
       label: "Firstname",
       type: "text",
+      onChange: (e: any) => {
+        profile.firstname = e.target.value;
+      },
     },
     {
       defaultValue: profile.lastname,
       id: "Lastname",
       label: "Lastname",
       type: "text",
+      onChange: (e: any) => {
+        profile.lastname = e.target.value;
+      },
     },
     {
       defaultValue: profile.gender,
       id: "Gender",
       label: "Gender",
       type: "text",
+      onChange: (e: any) => {
+        profile.gender = e.target.value;
+      },
     },
     {
       defaultValue: profile.age,
       id: "age",
       label: "Age",
       type: "number",
+      onChange: (e: any) => {
+        profile.age = e.target.value;
+      },
     },
   ];
 
@@ -47,7 +59,15 @@ const FormProfile = (props: Props) => {
         legend="Profile"
         fields={fields}
         submit={
-          <Button fullWidth variant="contained" color="primary">
+          <Button
+            fullWidth
+            variant="contained"
+            color="primary"
+            onClick={() => {
+              profile.update();
+              props.handleClose();
+            }}
+          >
             Valider
           </Button>
         }
